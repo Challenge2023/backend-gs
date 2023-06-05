@@ -1,0 +1,39 @@
+{
+	"nome": "Pikachu",
+	"altura": 0.4,
+	"peso": 6,
+	"categoria": "MOUSE",
+	"habilidades": "Static"
+}
+
+{
+	"nome": "Charmander",
+	"altura": 0.6,
+	"peso": 8,
+	"categoria": "LIZARD",
+	"habilidades": "Blaze"
+}
+
+{
+	"nome": "Bulbasaur",
+	"altura": 0.7,
+	"peso": 7,
+	"categoria": "SEED",
+	"habilidades": "Overgrow"
+}
+
+{
+	"nome": "Charmeleon",
+	"altura": 1.1,
+	"peso": 19,
+	"categoria": "FLAME",
+	"habilidades": "Blaze"
+}
+
+{
+	"nome": "Raichu",
+	"altura": 0.7,
+	"peso": 9,
+	"categoria": "MOUSE",
+	"habilidades": "Static"
+}
