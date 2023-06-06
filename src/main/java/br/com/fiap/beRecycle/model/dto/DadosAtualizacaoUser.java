@@ -5,20 +5,22 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 
-public record DadosAtualizacaoBeneficiario(
+public record DadosAtualizacaoUser(
         @NotNull
         Long id,
         @NotBlank
-        String nome,
+        String name,
+        @NotBlank
+        @Length(min = 10)
+        String cep,
         @NotBlank
         @Length(min = 11)
-        String telefone,
+        String phone,
         @NotBlank
-        @Email()
+        @Email
         String email,
         @NotBlank
         @Length(min = 6)
-        String senha
-
+        String pass
 ) {
 }
