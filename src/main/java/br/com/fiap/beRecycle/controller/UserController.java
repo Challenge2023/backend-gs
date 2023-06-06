@@ -4,6 +4,7 @@ import br.com.fiap.beRecycle.model.UserRepository;
 import br.com.fiap.beRecycle.model.dto.DadosAtualizacaoUser;
 import br.com.fiap.beRecycle.model.dto.DadosCadastroUser;
 import br.com.fiap.beRecycle.model.dto.DadosListagemUser;
+import br.com.fiap.beRecycle.model.dto.DadosLoginUser;
 import br.com.fiap.beRecycle.model.entity.User;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/doador")
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
@@ -32,6 +33,10 @@ public class UserController {
         return repository.findAllByActiveTrue(paginacao).map(DadosListagemUser:: new);
     }
 
+    @GetMapping
+    public User listarPorEmailESenha(@RequestBody @Valid DadosLoginUser dados) {
+        return repository.getUserByEmailAndPass(dados.email(), dados.pass());
+    }
     @PutMapping
     @Transactional
     public void atualizar(@RequestBody @Valid DadosAtualizacaoUser dados) {

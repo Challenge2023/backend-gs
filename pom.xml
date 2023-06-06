@@ -12,7 +12,7 @@
 	<artifactId>beRecycle</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>pokemon</name>
-	<description>Api para catálogo de pokemon</description>
+	<description>Api beRecycle</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

@@ -26,7 +26,7 @@ public class User {
     public User() {
     }
     public User(DadosCadastroUser dados) {
-        this.active = 0;
+        this.active = 1;
         this.name = dados.name();
         this.cep = dados.cep();
         this.phone = dados.phone();
@@ -46,7 +46,7 @@ public class User {
         if(dados.email() != null) this.email = dados.email();
         if(dados.pass() != null) this.pass = dados.pass();
     }
-    public void excluir() { this.active = 1; }
+    public void excluir() { this.active = 0; }
 
     public String getHouseNumber() {
         return houseNumber;
