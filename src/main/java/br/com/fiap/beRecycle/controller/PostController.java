@@ -11,6 +11,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -30,6 +31,10 @@ public class PostController {
     public Page<DadosListagemPost> listarByAtivoTrue(
             @PageableDefault(size=5, sort= {"usersName"}) Pageable paginacao){
         return repository.findAllByActiveTrue(paginacao).map(DadosListagemPost:: new);
+    }
+
+    public List<Post> listarTodosPorEmail(@RequestBody @Valid DadosListarTodosPostsPorEmail dados) {
+        return repository.findAllByEmail(dados.email());
     }
 
     @GetMapping("/{id}")
