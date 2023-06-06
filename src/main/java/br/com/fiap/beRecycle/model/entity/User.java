@@ -4,7 +4,7 @@ import br.com.fiap.beRecycle.model.dto.DadosAtualizacaoUser;
 import br.com.fiap.beRecycle.model.dto.DadosCadastroUser;
 import jakarta.persistence.*;
 
-@Table(name = "user")
+@Table(name = "tb_user")
 @Entity(name = "user")
 public class User {
     @Id
@@ -15,9 +15,10 @@ public class User {
     private String phone;
     private String email;
     private String pass;
-    private Boolean active;
+    private Integer active;
     private Type type;
-    private String houseNumber;
+    @Column(name = "housenumber")
+    private String houseNumber = null;
     private String cnh = null;
     private String vehicle = null;
     private String cnpj = null;
@@ -25,7 +26,7 @@ public class User {
     public User() {
     }
     public User(DadosCadastroUser dados) {
-        this.active = true;
+        this.active = 0;
         this.name = dados.name();
         this.cep = dados.cep();
         this.phone = dados.phone();
@@ -45,7 +46,7 @@ public class User {
         if(dados.email() != null) this.email = dados.email();
         if(dados.pass() != null) this.pass = dados.pass();
     }
-    public void excluir() { this.active = false; }
+    public void excluir() { this.active = 1; }
 
     public String getHouseNumber() {
         return houseNumber;
@@ -110,11 +111,11 @@ public class User {
         return this;
     }
 
-    public Boolean getActive() {
+    public Integer getActive() {
         return active;
     }
 
-    public User setActive(Boolean active) {
+    public User setActive(Integer active) {
         this.active = active;
         return this;
     }

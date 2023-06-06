@@ -11,7 +11,7 @@ public record DadosCadastroUser(
         @NotBlank
         String name,
         @NotBlank
-        @Length(min = 10)
+        @Length(min = 9)
         String cep,
         @NotBlank
         @Length(min = 11)

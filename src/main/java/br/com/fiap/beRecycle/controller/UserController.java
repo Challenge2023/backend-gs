@@ -29,7 +29,7 @@ public class UserController {
     @GetMapping
     public Page<DadosListagemUser> listar(
             @PageableDefault(size=3, sort= {"nome"}) Pageable paginacao){
-        return repository.findAllByAtivoTrue(paginacao).map(DadosListagemUser:: new);
+        return repository.findAllByActiveTrue(paginacao).map(DadosListagemUser:: new);
     }
 
     @PutMapping

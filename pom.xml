@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.fiap</groupId>
-	<artifactId>pokemon</artifactId>
+	<artifactId>beRecycle</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>pokemon</name>
 	<description>Api para catálogo de pokemon</description>

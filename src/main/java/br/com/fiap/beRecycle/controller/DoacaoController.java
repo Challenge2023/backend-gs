@@ -3,7 +3,6 @@ package br.com.fiap.beRecycle.controller;
 import br.com.fiap.beRecycle.model.DoacaoRepository;
 import br.com.fiap.beRecycle.model.dto.*;
 import br.com.fiap.beRecycle.model.entity.Doacao;
-import br.com.fiap.beRecycle.model.entity.Doador;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
