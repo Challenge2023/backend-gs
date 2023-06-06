@@ -29,7 +29,7 @@ public class PostController {
 
     @GetMapping
     public Page<DadosListagemPost> listarByAtivoTrue(
-            @PageableDefault(size=5, sort= {"usersName"}) Pageable paginacao){
+            @PageableDefault(size=5, sort= {"name"}) Pageable paginacao){
         return repository.findAllByActiveTrue(paginacao).map(DadosListagemPost:: new);
     }
     @GetMapping("/todos")

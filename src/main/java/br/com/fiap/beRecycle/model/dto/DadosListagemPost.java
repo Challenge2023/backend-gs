@@ -10,7 +10,8 @@ public record DadosListagemPost(
         String phone,
         String email,
         String description,
-        Type type
+        Type type,
+        String local
 ) {
     public DadosListagemPost(Post post) {
         this(
@@ -20,7 +21,8 @@ public record DadosListagemPost(
                 post.getPhone(),
                 post.getEmail(),
                 post.getDescription(),
-                post.getType()
+                post.getType(),
+                post.getLocal()
         );
     }
 }

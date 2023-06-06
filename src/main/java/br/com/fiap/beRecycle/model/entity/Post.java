@@ -29,6 +29,8 @@ public class Post {
         this.phone = dados.phone();
         this.email = dados.email();
         this.local = dados.local();
+        this.userId = dados.userId();
+        this.type = dados.type();
         this.description = dados.description();
     }
 
