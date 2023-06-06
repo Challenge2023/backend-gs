@@ -10,12 +10,16 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "id_user")
+    private Long userId;
     private String name;
     private String phone;
     private String email;
     private String local;
     private String description;
     private Integer active;
+
+    private Type type;
 
     public Post(){}
 
@@ -94,6 +98,24 @@ public class Post {
 
     public Post setActive(Integer active) {
         this.active = active;
+        return this;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public Post setType(Type type) {
+        this.type = type;
+        return this;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public Post setUserId(Long userId) {
+        this.userId = userId;
         return this;
     }
 }

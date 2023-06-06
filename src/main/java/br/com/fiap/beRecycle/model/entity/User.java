@@ -155,4 +155,6 @@ public class User {
         this.cnpj = cnpj;
         return this;
     }
+
+
 }

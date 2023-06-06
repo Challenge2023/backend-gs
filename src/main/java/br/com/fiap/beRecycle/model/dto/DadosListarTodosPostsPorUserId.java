@@ -3,9 +3,9 @@ package br.com.fiap.beRecycle.model.dto;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
-public record DadosListarTodosPostsPorEmail(
+public record DadosListarTodosPostsPorUserId(
         @NotBlank
         @Email
-        String email
+        Long userId
 ) {
 }

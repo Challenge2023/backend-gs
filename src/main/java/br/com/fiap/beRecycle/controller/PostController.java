@@ -33,8 +33,8 @@ public class PostController {
         return repository.findAllByActiveTrue(paginacao).map(DadosListagemPost:: new);
     }
 
-    public List<Post> listarTodosPorEmail(@RequestBody @Valid DadosListarTodosPostsPorEmail dados) {
-        return repository.findAllByEmail(dados.email());
+    public List<Post> listarTodosPorEmail(@RequestBody @Valid DadosListarTodosPostsPorUserId dados) {
+        return repository.findAllByUserId(dados.userId());
     }
 
     @GetMapping("/{id}")
