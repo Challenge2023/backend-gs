@@ -32,8 +32,8 @@ public class PostController {
             @PageableDefault(size=5, sort= {"usersName"}) Pageable paginacao){
         return repository.findAllByActiveTrue(paginacao).map(DadosListagemPost:: new);
     }
-
-    public List<Post> listarTodosPorEmail(@RequestBody @Valid DadosListarTodosPostsPorUserId dados) {
+    @GetMapping("/todos")
+    public List<Post> listarTodosPorUserId(@RequestBody @Valid DadosListarTodosPostsPorUserId dados) {
         return repository.findAllByUserId(dados.userId());
     }
 
