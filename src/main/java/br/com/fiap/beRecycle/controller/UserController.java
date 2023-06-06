@@ -33,7 +33,7 @@ public class UserController {
         return repository.findAllByActiveTrue(paginacao).map(DadosListagemUser:: new);
     }
 
-    @GetMapping
+    @GetMapping("/login")
     public User listarPorEmailESenha(@RequestBody @Valid DadosLoginUser dados) {
         return repository.getUserByEmailAndPass(dados.email(), dados.pass());
     }
