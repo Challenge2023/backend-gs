@@ -32,9 +32,9 @@ public class PostController {
             @PageableDefault(size=5, sort= {"name"}) Pageable paginacao){
         return repository.findAllByActiveTrue(paginacao).map(DadosListagemPost:: new);
     }
-    @GetMapping("/todos")
-    public List<Post> listarTodosPorUserId(@RequestBody @Valid DadosListarTodosPostsPorUserId dados) {
-        return repository.findAllByUserId(dados.userId());
+    @GetMapping("/user/{id}")
+    public List<Post> listarTodosPorUserId(@PathVariable Long id) {
+        return repository.findAllByUserId(id);
     }
 
     @GetMapping("/{id}")
