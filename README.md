@@ -5,6 +5,8 @@ https://www.youtube.com/watch?v=KqlbojUZsVU
 ### Execução da API
  > Para executar a API, execute a classe **beRecycleApplication**.
 
+<br>
+
 ### Endpoints
 
 <details>
@@ -103,8 +105,6 @@ DELETE: **http://localhost:8080/user/{id}**
   > A rota recebe o Id do usario e realiza o soft delete
 </details>
 
-<br>
-<br>
 
 <details>
   <summary>POST Entit</summary>
