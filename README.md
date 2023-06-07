@@ -1,6 +1,6 @@
 ###Video Pitch
 
-<href>https://www.youtube.com/watch?v=KqlbojUZsVU</href>
+https://www.youtube.com/watch?v=KqlbojUZsVU
 
 ### Execução da API
 
