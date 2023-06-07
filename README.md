@@ -103,6 +103,9 @@ DELETE: **http://localhost:8080/user/{id}**
   > A rota recebe o Id do usario e realiza o soft delete
 </details>
 
+<br>
+<br>
+
 <details>
   <summary>POST Entit</summary>
   
