@@ -4,21 +4,40 @@ import br.com.fiap.beRecycle.model.dto.DadosAtualizacaoPost;
 import br.com.fiap.beRecycle.model.dto.DadosCadastroPost;
 import jakarta.persistence.*;
 
-@Table(name = "tb_post")
-@Entity(name = "post")
+@Entity
+@Table(
+        name = "tb_post",
+        uniqueConstraints = {
+            @UniqueConstraint(name = "fk_user_post", columnNames = "id_user"),
+        }
+)
+
 public class Post {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_post")
+    @SequenceGenerator(
+            name = "sq_post",
+            sequenceName = "sq_post",
+            initialValue = 1,
+            allocationSize = 1
+    )
+    @Column(name = "id_post")
     private Long id;
     @Column(name = "id_user")
     private Long userId;
+    @Column(name = "nm_post")
     private String name;
+    @Column(name = "num_phone")
     private String phone;
+    @Column(name = "ds_email")
     private String email;
+    @Column(name = "ds_local")
     private String local;
+    @Column(name = "ds_post")
     private String description;
+    @Column(name = "ds_active")
     private Integer active;
-
+    @Column(name = "tp_post")
     private Type type;
 
     public Post(){}

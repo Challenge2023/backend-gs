@@ -4,23 +4,48 @@ import br.com.fiap.beRecycle.model.dto.DadosAtualizacaoUser;
 import br.com.fiap.beRecycle.model.dto.DadosCadastroUser;
 import jakarta.persistence.*;
 
-@Table(name = "tb_user")
-@Entity(name = "user")
+@Entity
+@Table(
+        name = "tb_user",
+        uniqueConstraints = {
+                @UniqueConstraint(name = "uk_num_cnh", columnNames = "num_cnh"),
+                @UniqueConstraint(name = "uk_num_cnpj", columnNames = "num_cnpj"),
+                @UniqueConstraint(name = "uk_num_phone", columnNames = "num_phone"),
+                @UniqueConstraint(name = "uk_ds_email", columnNames = "ds_email")
+        }
+)
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_user")
+    @SequenceGenerator(
+            name = "sq_user",
+            sequenceName = "sq_user",
+            initialValue = 1,
+            allocationSize = 1
+    )
+    @Column(name = "id_user")
     private Long id;
+    @Column(name = "nm_user")
     private String name;
+    @Column(name = "num_cep")
     private String cep;
+    @Column(name = "num_phone")
     private String phone;
+    @Column(name = "ds_email")
     private String email;
+    @Column(name = "ds_pass")
     private String pass;
+    @Column(name = "ds_active")
     private Integer active;
+    @Column(name = "tp_user")
     private Type type;
     @Column(name = "housenumber")
     private String houseNumber = null;
+    @Column(name = "num_cnh")
     private String cnh = null;
+    @Column(name = "ds_vehicle")
     private String vehicle = null;
+    @Column(name = "num_cnpj")
     private String cnpj = null;
 
     public User() {
