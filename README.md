@@ -3,7 +3,7 @@
 https://www.youtube.com/watch?v=KqlbojUZsVU
 
 ### Execução da API
- > Para executar a API, execute a classe **beRecycleApplication**.
+ > Para executar a API, execute a classe **beRecycleApplication**. Deixamos um txt com as tabelas do banco para serem criadas no SQL Developer
 
 <br>
 
