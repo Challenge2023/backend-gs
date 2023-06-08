@@ -107,7 +107,7 @@ DELETE: **http://localhost:8080/user/{id}**
 
 
 <details>
-  <summary>POST Entit</summary>
+  <summary>POST Entity</summary>
   
   <br>
   
